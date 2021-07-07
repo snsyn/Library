@@ -1,16 +1,42 @@
-# This is a sample Python script.
-
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from menus import Menus
+from utils import cli_cleaner
+from browse import Booklist
 
 
-# Press the green button in the gutter to run the script.
+def about():
+    while True:
+        cli_cleaner()
+        print(
+            'This program has the objective of reviewing from basic python concepts to advanced ones by means of '
+            'creating a library which functionality will gradually increase\n')
+        print('(Q)uit')
+        action = input()
+        if action == 'Q':
+            break
+
+
+# Main
+def main():
+    menu_Printer = Menus()
+    option = 0
+    while option != 3:
+        cli_cleaner()
+        print('Welcome to the library.')
+        print('Please, select an option')
+        menu_Printer.printMenu('main')
+        option = input()
+        if option == '1':
+            browse = Booklist()
+            browse.browse()
+        elif option == '2':
+            about()
+        elif option == '3':
+            break
+
+    cli_cleaner()
+    print('Thanks for visiting the library')
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    main()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
