@@ -3,7 +3,7 @@ import json
 
 class Menus:
     def __init__(self):
-        with open('menus.json','r') as menus:
+        with open('./assets/menus.json', 'r') as menus:
             self.__menu_list = json.load(menus)
 
     def printMenu(self, stage):

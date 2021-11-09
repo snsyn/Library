@@ -5,7 +5,7 @@ from utils import cli_cleaner
 
 class Booklist:
     def __init__(self):
-        with open('books.json', 'r') as booklist:
+        with open('./assets/books.json', 'r') as booklist:
             self.__books = json.load(booklist)
         self.collection_length = len(self.__books)
         self.__printPos = 0
